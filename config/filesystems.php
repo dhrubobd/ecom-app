@@ -77,4 +77,11 @@ return [
         public_path('storage') => storage_path('app/public'),
     ],
 
+    'shared' => [
+        'driver' => 'local',
+        'root' => env('UPLOAD_PATH', storage_path('app/shared')),
+        'url' => env('APP_URL').'/shared',
+        'visibility' => 'public'
+    ],
+
 ];

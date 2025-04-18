@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class SslCommerzCredential extends Model
+class SslcommerzCredential extends Model
 {
     protected $fillable = [
         'store_id',

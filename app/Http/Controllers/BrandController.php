@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Brand;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Inertia\Inertia;
+
 class BrandController extends Controller
 {
     /**
@@ -70,7 +72,9 @@ class BrandController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return  Inertia::render('Brands/EditBrand', [
+            'brand' => Brand::findOrFail($id),
+        ]);
     }
 
     /**
@@ -78,7 +82,39 @@ class BrandController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        try {
+            $request->validate([
+                'name' => 'required|string|max:255',
+                'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            ]);
+
+            $brand = Brand::findOrFail($id);
+
+            $imageLocation = $brand->image;
+            if ($request->hasFile('image')) {
+                if ($brand->image) {
+                    $imagePath = str_replace(Storage::disk('shared')->url(''), '', $brand->image);
+
+                    if (Storage::disk('shared')->exists($imagePath)) {
+                        Storage::disk('shared')->delete($imagePath);
+                    }
+                }
+
+                $image = $request->file('image');
+                $imageName = time() . '.' . $image->getClientOriginalExtension();
+                $imagePath = $image->storeAs('brands', $imageName, 'shared');
+                $imageLocation = Storage::disk('shared')->url($imagePath);
+            }
+
+            $brand->update([
+                'name' => $request->name,
+                'image' => $imageLocation,
+            ]);
+
+            return redirect()->route('brands.index')->with('success', 'Brand updated successfully');
+        } catch (\Throwable $th) {
+            return redirect()->back()->with('error', $th->getMessage());
+        }
     }
 
     /**

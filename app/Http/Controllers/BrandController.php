@@ -42,7 +42,7 @@ class BrandController extends Controller
             if ($request->hasFile('image')) {
                 $image = $request->file('image');
                 $imageName = time() . '.' . $image->getClientOriginalExtension();
-                $imagePath = $image->storeAs('images', $imageName, 'shared');
+                $imagePath = $image->storeAs('brands', $imageName, 'shared');
                 $imageLocation = Storage::disk('shared')->url($imagePath);
             }
 
@@ -89,10 +89,14 @@ class BrandController extends Controller
         try {
             $brand = Brand::findOrFail($id);
             if ($brand->image) {
-                Storage::disk('shared')->delete($brand->image);
+                $imagePath = str_replace(Storage::disk('shared')->url(''), '', $brand->image);
+
+                if (Storage::disk('shared')->exists($imagePath)) {
+                    Storage::disk('shared')->delete($imagePath);
+                }
             }
+
             $brand->delete();
-            return redirect()->route('brands.index')->with('success', 'Brand deleted successfully');
         } catch (\Throwable $th) {
             return redirect()->back()->with('error', $th->getMessage());
         }

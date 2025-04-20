@@ -84,7 +84,7 @@
                 <label for="init-url" class="block text-gray-700 font-bold mb-2">Init URL</label>
                 <input type="text" id="init-url" class="w-full p-2 border rounded-md" placeholder="Enter INIT URL (e.g., /payment/init)" required v-model="form.init_url">
             </div>
-            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md">Save Settings</button>
+            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md cursor-pointer">Save Settings</button>
             </form>
         </main>
     </Mainlayout>

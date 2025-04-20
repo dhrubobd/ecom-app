@@ -46,6 +46,13 @@ return [
             'throw' => false,
             'report' => false,
         ],
+        
+        'shared' => [
+        'driver' => 'local',
+        'root' => env('UPLOAD_PATH', storage_path('app/shared')),
+        'url' => env('APP_URL').'/shared',
+        'visibility' => 'public'
+        ],
 
         's3' => [
             'driver' => 's3',
@@ -77,11 +84,6 @@ return [
         public_path('storage') => storage_path('app/public'),
     ],
 
-    'shared' => [
-        'driver' => 'local',
-        'root' => env('UPLOAD_PATH', storage_path('app/shared')),
-        'url' => env('APP_URL').'/shared',
-        'visibility' => 'public'
-    ],
+    
 
 ];

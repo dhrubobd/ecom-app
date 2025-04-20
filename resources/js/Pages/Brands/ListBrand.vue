@@ -66,7 +66,7 @@ const columns = [
                         </td>
                         <td class="p-3 space-x-2">
                         <Link :href="`/brands/${brand.id}/edit`" class="bg-yellow-500 text-white px-2 py-1 rounded-md cursor-pointer">Edit</Link>
-                        <button @click="deleteBrand(brand.id)" class="bg-red-500 text-white px-2 py-1 rounded-md">Delete</button>
+                        <button @click="deleteBrand(brand.id)" class="bg-red-500 text-white px-2 py-1 rounded-md cursor-pointer">Delete</button>
                         </td>
                     </tr>
                     <!-- Repeat for other brands -->

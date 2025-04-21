@@ -8,18 +8,18 @@ const toast = useToast();
 const flash = computed(() => usePage().props.flash);
 
 const props = defineProps({
-    brands: Object
+    categories: Object
 });
 
 const deleteBrand = (id) => {
     if (confirm('Are you sure, you want to delete this ?')) {
-        router.delete(`/brands/${id}`, {
+        router.delete(`/categories/${id}`, {
             onSuccess: () => {
                 flash.value.success && toast.success(flash.value.success);
                 flash.value.error && toast.error(flash.value.error);
             },
             onError: () => {
-                toast.error('Failed to delete brand. Please try again.');
+                toast.error('Failed to delete Category. Please try again.');
             }
         });
     }
@@ -32,8 +32,8 @@ const deleteBrand = (id) => {
         <!-- Main Content -->
         <main class="ml-64 p-8">
             <div class="flex justify-between items-center mb-6">
-                <h2 class="text-2xl font-bold">Brands</h2>
-                <Link href="/brands/create" class="bg-blue-500 text-white px-4 py-2 rounded-md">Add Brand</Link>
+                <h2 class="text-2xl font-bold">Categories</h2>
+                <Link href="/categories/create" class="bg-blue-500 text-white px-4 py-2 rounded-md">Add Categorie</Link>
             </div>
             <div class="bg-white shadow-md rounded-lg overflow-hidden">
                 <table class="w-full">
@@ -45,23 +45,23 @@ const deleteBrand = (id) => {
                     </tr>
                     </thead>
                     <tbody>
-                    <tr class="border-b" v-for="(brand, index) in brands" :key="index">
-                        <td class="p-3">{{ brand.name }}</td>
+                    <tr class="border-b" v-for="(category, index) in categories" :key="index">
+                        <td class="p-3">{{ category.name }}</td>
                             
                         <td class="p-3">
-                            <div v-if="brand.image != ''">
-                                <img :src="brand.image" alt="Brand Image" class="w-10 h-10 rounded-full">
+                            <div v-if="category.image != ''">
+                                <img :src="category.image" alt="Categorie Image" class="w-10 h-10 rounded-full">
                             </div>
                             <div v-else>
-                                <img src="https://dummyimage.com/80x80/000/fff&text=Brand" alt="Brand Image" class="w-10 h-10 rounded-full">
+                                <img src="https://dummyimage.com/80x80/000/fff&text=category" alt="Categorie Image" class="w-10 h-10 rounded-full">
                             </div>
                         </td>
                         <td class="p-3 space-x-2">
-                        <Link :href="`/brands/${brand.id}/edit`" class="bg-yellow-500 text-white px-2 py-1 rounded-md cursor-pointer">Edit</Link>
-                        <button @click="deleteBrand(brand.id)" class="bg-red-500 text-white px-2 py-1 rounded-md cursor-pointer">Delete</button>
+                        <Link :href="`/categories/${category.id}/edit`" class="bg-yellow-500 text-white px-2 py-1 rounded-md cursor-pointer">Edit</Link>
+                        <button @click="deleteBrand(category.id)" class="bg-red-500 text-white px-2 py-1 rounded-md cursor-pointer">Delete</button>
                         </td>
                     </tr>
-                    <!-- Repeat for other brands -->
+                    <!-- Repeat for other Category -->
                     </tbody>
                 </table>
             </div>

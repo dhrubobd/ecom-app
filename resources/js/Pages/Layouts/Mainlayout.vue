@@ -2,7 +2,7 @@
 import Sidebar from './Sidebar.vue';
 </script>
 <template>
-    <div class="flex h-screen">
+    <div class="h-screen">
         <!-- Sidebar -->
         <Sidebar />
 

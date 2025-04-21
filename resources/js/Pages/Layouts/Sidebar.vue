@@ -9,7 +9,7 @@
                 <li><Link href="/" class="hover:bg-gray-700 p-2 block rounded">Dashboard</Link></li>
                 <li><Link href="/categories" class="hover:bg-gray-700 p-2 block rounded">Categories</Link></li>
                 <li><Link href="/brands" class="hover:bg-gray-700 p-2 block rounded">Brands</Link></li>
-                <li><Link href="/slides" class="hover:bg-gray-700 p-2 block rounded">Slides</Link></li>
+                <li><Link href="/sliders" class="hover:bg-gray-700 p-2 block rounded">Slides</Link></li>
                 <li><Link href="/products" class="hover:bg-gray-700 p-2 block rounded">Products</Link></li>
                 <li><Link href="/orders" class="hover:bg-gray-700 p-2 block rounded">Orders</Link></li>
                 <li><Link href="/reviews" class="hover:bg-gray-700 p-2 block rounded">Reviews</Link></li>

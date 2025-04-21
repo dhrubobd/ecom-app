@@ -50,7 +50,7 @@
                 </div>
                 <div class="mb-4">
                     <label for="brand-image" class="block text-gray-700 font-bold mb-2">Image</label>
-                    <input type="file" id="brand-image" class="w-full p-2 border rounded-md" required v-on:change="handleImage">
+                    <input type="file" id="brand-image" class="w-full p-2 border rounded-md"  v-on:change="handleImage">
                 </div>
                 <div class="mb-4">
                     <img :src="brandImage" alt="Brand Image" class="w-25 h-25 rounded-full mb-2">

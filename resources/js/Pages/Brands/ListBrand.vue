@@ -57,11 +57,11 @@ const columns = [
                         <td class="p-3">{{ brand.name }}</td>
                             
                         <td class="p-3">
-                            <div v-if="brand.image === null">
-                                <img src="https://dummyimage.com/80x80/000/fff&text=Brand" alt="Brand Image" class="w-10 h-10 rounded-full">
+                            <div v-if="brand.image != ''">
+                                <img :src="brand.image" alt="Brand Image" class="w-10 h-10 rounded-full">
                             </div>
                             <div v-else>
-                                <img :src="brand.image" alt="Brand Image" class="w-10 h-10 rounded-full">
+                                <img src="https://dummyimage.com/80x80/000/fff&text=Brand" alt="Brand Image" class="w-10 h-10 rounded-full">
                             </div>
                         </td>
                         <td class="p-3 space-x-2">

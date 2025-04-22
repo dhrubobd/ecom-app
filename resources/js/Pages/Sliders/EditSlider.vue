@@ -69,7 +69,7 @@ onMounted(() => {
                 <div class="mb-4">
                     <img :src="slideImage" alt="Slide Image" class="w-32 h-32 rounded-md mb-4">
                 </div>
-                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md cursor-pointer">Edit Slide</button>
+                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md cursor-pointe">Edit Slide</button>
             </form>
         </main>
     </Mainlayout>

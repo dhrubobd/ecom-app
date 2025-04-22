@@ -88,12 +88,12 @@ class CategoryController extends Controller
                 'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             ]);
 
-            $brand = Category::findOrFail($id);
+            $category = Category::findOrFail($id);
 
-            $imageLocation = $brand->image;
+            $imageLocation = $category->image;
             if ($request->hasFile('image')) {
-                if ($brand->image) {
-                    $imagePath = str_replace(Storage::disk('shared')->url(''), '', $brand->image);
+                if ($category->image) {
+                    $imagePath = str_replace(Storage::disk('shared')->url(''), '', $category->image);
 
                     if (Storage::disk('shared')->exists($imagePath)) {
                         Storage::disk('shared')->delete($imagePath);
@@ -106,7 +106,7 @@ class CategoryController extends Controller
                 $imageLocation = Storage::disk('shared')->url($imagePath);
             }
 
-            $brand->update([
+            $category->update([
                 'name' => $request->name,
                 'image' => $imageLocation,
             ]);

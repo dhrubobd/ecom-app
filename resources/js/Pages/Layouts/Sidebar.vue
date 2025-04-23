@@ -6,7 +6,7 @@
         <div class="p-4">
             <h3 class="text-xl font-bold mb-6">Admin Panel</h3>
             <ul class="mt-4 space-y-2">
-                <li><Link href="/" class="hover:bg-gray-700 p-2 block rounded">Dashboard</Link></li>
+                <li><Link href="/dashboard" class="hover:bg-gray-700 p-2 block rounded">Dashboard</Link></li>
                 <li><Link href="/brands" class="hover:bg-gray-700 p-2 block rounded">Brands</Link></li>
                 <li><Link href="/categories" class="hover:bg-gray-700 p-2 block rounded">Categories</Link></li>
                 <li><Link href="/sliders" class="hover:bg-gray-700 p-2 block rounded">Slides</Link></li>

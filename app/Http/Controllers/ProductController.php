@@ -172,7 +172,7 @@ class ProductController extends Controller
                 'price' => $request->price,
                 'is_discount' => $request->is_discount,
                 'discount_price' => $request->discount_price,
-                'image' => $this->handleImage($request->file('image'), $request->image),
+                'image' => $this->handleImage($request->file('image'), $product->image),
                 'in_stock' => $request->in_stock,
                 'stock' => $request->stock,
                 'remark' => $request->remark,

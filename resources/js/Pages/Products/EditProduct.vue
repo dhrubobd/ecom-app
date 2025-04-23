@@ -125,8 +125,8 @@ onMounted(() => {
                         </select>
                     </div>
                     <div class="mb-4">
-                        <label for="product-image" class="block text-gray-700 font-bold mb-2">Main Image</label>
-                        <input type="file" id="product-image" class="w-full p-2 border rounded-md" @change="event => handleImageChange(event, 'image')">
+                        <label for="image" class="block text-gray-700 font-bold mb-2">Main Image</label>
+                        <input type="file" id="image" class="w-full p-2 border rounded-md" @change="event => handleImageChange(event, 'image')">
                         <div v-if="images.image != null">
                             <img :src="images.image" alt="Main Image" class="w-20 h-20 rounded-md">
                         </div>

@@ -14,6 +14,7 @@
                 <li><Link href="/orders" class="hover:bg-gray-700 p-2 block rounded">Orders</Link></li>
                 <li><Link href="/users" class="hover:bg-gray-700 p-2 block rounded">Users</Link></li>
                 <li><Link href="/settings" class="hover:bg-gray-700 p-2 block rounded">Settings</Link></li>
+                <li><Link href="/logout" class="hover:bg-gray-700 p-2 block rounded">Logout</Link></li>
             </ul>
         </div>
     </aside>

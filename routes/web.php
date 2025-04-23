@@ -24,6 +24,7 @@ Route   ::middleware(['web', 'auth', 'RoleMiddleware:admin'])->group(function ()
     Route::resource('/sliders', SliderController::class);
     Route::resource('/products', ProductController::class);
     Route::resource('/users', UserController::class);
+    Route::get('/logout', [AuthController::class, 'logout'])->name('page.logout');
 
         });
 

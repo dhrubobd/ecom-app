@@ -14,10 +14,22 @@ class AuthSeeder extends Seeder
     public function run(): void
     {
         User::Create([
-            'email' => 'test@test.com',
-            'password' => '123',
+            'email' => 'admin@admin.com',
+            'password' => 'admin123',
             'otp' => null,
             'role' => 'admin',
+        ]);
+        User::Create([
+            'email' => 'editor@editor.com',
+            'password' => 'editor123',
+            'otp' => null,
+            'role' => 'editor',
+        ]);
+        User::Create([
+            'email' => 'user@user.com',
+            'password' => 'user123',
+            'otp' => null,
+            'role' => 'user',
         ]);
     }
 }

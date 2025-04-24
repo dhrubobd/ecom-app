@@ -16,6 +16,7 @@
         cancel_url: '',
         ipn_url: '',
         init_url: '',
+        '_method': 'PUT',
     });
 
     const toast = useToast();
@@ -31,7 +32,7 @@
         form.init_url = props.settings.init_url || '';
     });
     const submitForm = () => {
-        form.patch(`/settings/${props.settings.id}`, {
+        form.post(`/settings/${props.settings.id}`, {
             onSuccess: () => {
                 //toast.success('Settings saved successfully!');
                 flash.value.success && toast.success(flash.value.success || 'Settings saved successfully!');

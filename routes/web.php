@@ -15,7 +15,7 @@ Route::redirect("/", '/login');
 Route::get('/login',[AuthController::class, 'loginPage'])->name('page.login');
 Route::post('/login',[AuthController::class, 'login'])->name('post.login');
 
-Route   ::middleware(['web', 'auth', 'RoleMiddleware:admin'])->group(function () {
+Route::middleware(['auth', 'RoleMiddleware:admin'])->group(function () {
 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('page.dashboard');
     Route::resource('/settings', SSLCommerzCredentialController::class);
@@ -26,6 +26,6 @@ Route   ::middleware(['web', 'auth', 'RoleMiddleware:admin'])->group(function ()
     Route::resource('/users', UserController::class);
     Route::get('/logout', [AuthController::class, 'logout'])->name('page.logout');
 
-        });
+});
 
     

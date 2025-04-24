@@ -14,6 +14,18 @@ class SSLCommerzCredentialController extends Controller
     public function index()
     {
         $settings = SslcommerzCredential::first();
+        if  (!$settings) {
+            $settings = new SslcommerzCredential();
+            $settings->store_id = '';
+            $settings->store_password = '';
+            $settings->currency = '';
+            $settings->success_url = '';
+            $settings->fail_url = '';
+            $settings->cancel_url = '';
+            $settings->ipn_url = '';
+            $settings->init_url = '';
+            $settings->save();
+        }
         /*
         return inertia('Settings', [
             'settings' => $settings,
@@ -61,6 +73,7 @@ class SSLCommerzCredentialController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        //dd(request()->all());
         try {
             $request->validate([
                 'store_id' => 'required',

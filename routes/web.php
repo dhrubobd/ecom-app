@@ -6,11 +6,12 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\SSLCommerzCredentialController;
 use App\Http\Controllers\UserController;
 
-Route::redirect("/", '/login');
+Route::redirect('/', '/login');
 
 Route::get('/login',[AuthController::class, 'loginPage'])->name('page.login');
 Route::post('/login',[AuthController::class, 'login'])->name('post.login');
@@ -23,6 +24,7 @@ Route::middleware(['auth', 'RoleMiddleware:admin'])->group(function () {
     Route::resource('/categories', CategoryController::class);
     Route::resource('/sliders', SliderController::class);
     Route::resource('/products', ProductController::class);
+    Route::resource('/orders', OrderController::class);
     Route::resource('/users', UserController::class);
     Route::get('/logout', [AuthController::class, 'logout'])->name('page.logout');
 

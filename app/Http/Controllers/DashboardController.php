@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Invoice;
+use App\Models\Product;
+use Inertia\Inertia;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -13,6 +16,13 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return inertia('Dashboard');
+        $totalOrders = Invoice::count();
+        $totalRevenue = Invoice::sum('total_amount');
+        $totalProducts = Product::count();
+        return Inertia::render('Dashboard', [
+            'totalOrders' => $totalOrders,
+            'totalRevenue' => $totalRevenue,
+            'totalProducts' => $totalProducts,
+        ]);
     }
 }

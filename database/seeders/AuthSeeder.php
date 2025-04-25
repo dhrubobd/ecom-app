@@ -25,11 +25,5 @@ class AuthSeeder extends Seeder
             'otp' => null,
             'role' => 'editor',
         ]);
-        User::Create([
-            'email' => 'user@user.com',
-            'password' => 'user123',
-            'otp' => null,
-            'role' => 'user',
-        ]);
     }
 }

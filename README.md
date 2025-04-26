@@ -11,11 +11,11 @@ Please follow the following steps:
 ## User Info
 
 **Admin User
-Email: admin@admin.com
+Email: [admin@admin.com](mailto:admin@admin.com)
 Password: admin123
 
 **Editor User
-Email: editor@editor.com
+Email: [editor@editor.com](mailto:editor@editor.com)
 Password: editor123
 
 **Customer User

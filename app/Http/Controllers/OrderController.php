@@ -63,8 +63,8 @@ class OrderController extends Controller
     {
         try {
             $request->validate([
-                'payment_status' => 'required|in:Success,Pending,Fail,Cancel',
-                'delivery_status' => 'required|in:Pending,Processing,Shipped,Delivered,Cancelled'
+                'payment_status' => 'required|in:success,pending,fail,cancel',
+                'delivery_status' => 'required|in:pending,processing,shipped,delivered,cancelled'
             ]);
             
             $invoice = Invoice::findOrFail($id);

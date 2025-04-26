@@ -15,17 +15,17 @@ const form = useForm({
 });
 
 const payment_options = ref([
-  { text: 'Success', value: 'Success' },
-  { text: 'Pending', value: 'Pending' },
-  { text: 'Fail', value: 'Fail' },
-  { text: 'Cancel', value: 'Cancel' }
+  { text: 'success', value: 'success' },
+  { text: 'pending', value: 'pending' },
+  { text: 'fail', value: 'fail' },
+  { text: 'cancel', value: 'cancel' }
 ]);
 const delivery_options = ref([
-  { text: 'Pending', value: 'Pending' },
-  { text: 'Processing', value: 'Processing' },
-  { text: 'Shipped', value: 'Shipped' },
-  { text: 'Delivered', value: 'Delivered' },
-  { text: 'Cancelled', value: 'Cancelled' }
+  { text: 'pending', value: 'pending' },
+  { text: 'processing', value: 'processing' },
+  { text: 'shipped', value: 'shipped' },
+  { text: 'delivered', value: 'delivered' },
+  { text: 'cancelled', value: 'cancelled' }
 ]);
 
 
